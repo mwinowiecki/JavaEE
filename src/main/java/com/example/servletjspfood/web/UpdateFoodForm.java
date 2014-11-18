@@ -25,15 +25,6 @@ public class UpdateFoodForm extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException{
 		PrintWriter writer = response.getWriter();
-		/*
-		StorageService ss = (StorageService)getServletContext().getAttribute("storage");
-		
-		if(request.getSession().getAttribute("food") == null){
-			request.getSession().setAttribute("food", new Food());
-		}
-		
-		Food food = (Food)request.getSession().getAttribute("food");
-		*/
 		
 		String name = null;
 		name = request.getParameter("name");
