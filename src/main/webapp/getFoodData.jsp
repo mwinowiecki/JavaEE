@@ -14,6 +14,7 @@
 
 
 <form action="foodData">
+
 	Nazwa: <input type="text" name="name" value="${food.name }"/><br/>
 	Typ: <input type="text" name="typ" value="${food.typ }"/><br/>
 	Cena: <input type="float" name="cena" value="${food.cena }"/><br/>

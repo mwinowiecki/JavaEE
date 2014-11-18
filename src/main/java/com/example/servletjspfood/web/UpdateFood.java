@@ -34,14 +34,16 @@ public class UpdateFood extends HttpServlet{
 		
 		Food food = (Food)request.getSession().getAttribute("food");
 		
-		String nazwa = null;
-		nazwa = request.getParameter("nazwa");
+		String name = null;
+		name = request.getParameter("name");
 		
 		String typ = null;
 		typ = request.getParameter("typ");
 		
-		float cena = 0;
-		cena = Float.parseFloat(request.getParameter("cena"));
+		Float cena = null;
+		if(request.getParameter("cena") != null){
+			cena = Float.parseFloat(request.getParameter("cena"));
+		}
 		
 		int ID = Integer.parseInt(request.getParameter("id"));
 		
@@ -49,7 +51,7 @@ public class UpdateFood extends HttpServlet{
 		
 		Food newFood = new Food();
 		
-		newFood.setName(nazwa);
+		newFood.setName(name);
 		newFood.setTyp(typ);
 		newFood.setCena(cena);
 		newFood.setId(ID);
@@ -59,7 +61,7 @@ public class UpdateFood extends HttpServlet{
 		
 		body+="<form action=\"/servletjspdemo/showAll.jsp\"; method=\"get\">"
 				+"<br/><br/> <input type=\"submit\" value=\"Wroc\">"
-				+"<br/></br></body></html>";
+				+"<br/><br/></body></html>";
 		
 		writer.println(body);
 		writer.close();

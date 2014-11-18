@@ -40,18 +40,12 @@ public class GetData extends HttpServlet{
 	String typ = null;
 	typ = request.getParameter("typ");
 	
-	float cena = 0;
+	Float cena = null;
 	cena = Float.parseFloat(request.getParameter("cena"));
 	
 	String body = "<html><body>Jedzenie: "
 			+"<form action=\"/servletjspdemo/showAll.jsp\">";
-			/*+ name
-			+"<br/> Typ: "
-			+typ
-			+"<br/> Cena: "
-			+cena
-			+"<br/><br/>";
-	*/
+			
 	Food newFood = new Food();
 	
 	newFood.setName(name);
@@ -62,8 +56,8 @@ public class GetData extends HttpServlet{
 	ss.add(newFood);
 	Food.lastID++;
 	
-	body += "<br/><br/> <input type=\"submit\" value=\"Wroc\" />"
-			+"<br/><br/></body></html>";
+	body += "<br/> <input type=\"submit\" value=\"Wroc\" />"
+			+"<br/></body></html>";
 	
 	writer.println(body);
 	writer.close();

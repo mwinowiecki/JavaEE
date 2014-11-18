@@ -10,6 +10,6 @@
     <body>
         <h2>Food Storage</h2>
         <p><a href="showAll.jsp">Show all</a></p>
-        <p><a href="getFoodData.jsp">Fill a form</a></p>
+        <p><a href="getFoodData.jsp">Add new food</a></p>
     </body>
 </html>

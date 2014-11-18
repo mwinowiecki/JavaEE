@@ -32,8 +32,10 @@ public class UpdateFoodForm extends HttpServlet {
 		String typ = null;
 		typ = request.getParameter("typ");
 		
-		float cena = 0;
-		cena = Float.parseFloat(request.getParameter("cena"));
+		Float cena = null;
+		if(request.getParameter("cena") != null){
+			cena = Float.parseFloat(request.getParameter("cena"));
+		}
 		
 		int ID = Integer.parseInt(request.getParameter("foodId"));
 		

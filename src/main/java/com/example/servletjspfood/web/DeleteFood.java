@@ -35,7 +35,7 @@ public class DeleteFood  extends HttpServlet {
 		Food food = (Food)request.getSession().getAttribute("food");
 		
 		String name = null;
-		name = request.getParameter("nazwa");
+		name = request.getParameter("name");
 		
 		String typ = null;
 		typ = request.getParameter("typ");
@@ -47,12 +47,11 @@ public class DeleteFood  extends HttpServlet {
 		
 		int ID = Integer.parseInt(request.getParameter("foodId"));
 		
-		
-		
-		String body = "<html><body> ID = " + ID;
+				
+		String body = "<html><body> ID usuniete = " + ID;
 		ss.delete(ID);
 		
-		body+="<br/><br/><input type=\"submit\" value=\"Wroc\" /> "
+		body+="<br/><br/> <input type=\"submit\" value=\"Wroc\" /> "
 				+"<br/><br/></body></html>";
 		
 		writer.println(body);

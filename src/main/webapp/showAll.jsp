@@ -15,28 +15,28 @@
 <tbody>
 <%
 	int id=0;
-for(com.example.servletjspfood.domain.Food food : storage.getAllFood()){
+	for(com.example.servletjspfood.domain.Food food : storage.getAllFood()){
 	id=food.getId();
 	%>
 	<tr>
 	<td>
 	<%
-	out.println("<p>" + food.getName() + "</p>");
+	out.println("<p>Nazwa ...... " + food.getName() + "</p>");
 	%>
 	</td>
 	<td>
 	<%
-	out.println("<p>" + food.getTyp() + "</p>");
+	out.println("<p>Typ ........ " + food.getTyp() + "</p>");
 	%>
 	</td>
 	<td>
 	<%
-	out.println("<p>" + food.getCena() + "</p>");
+	out.println("<p>Cena ....... " + food.getCena() + "</p>");
 	%>
 	</td>
 	<%
 	out.println("<td><a href=\"deleteFood?foodId="+String.valueOf(food.getId())+"\">Delete</a></td>");
-	out.println("<td><a href=\"updateFoodForm?foodId="+String.valueOf(food.getId())+"&nazwa="+String.valueOf(food.getName())+"&Typ="+String.valueOf(food.getTyp())+"&Cena="+Float.valueOf(food.getCena())+"\">Update</a></td></tr>");
+	out.println("<td><a href=\"updateFoodForm?foodId="+String.valueOf(food.getId())+"&name="+String.valueOf(food.getName())+"&Typ="+String.valueOf(food.getTyp())+"&Cena="+Float.valueOf(food.getCena())+"\">Update</a></td></tr>");
 	
 }
 
