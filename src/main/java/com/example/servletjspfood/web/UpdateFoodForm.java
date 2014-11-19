@@ -42,6 +42,8 @@ public class UpdateFoodForm extends HttpServlet {
 		boolean vege = false;
 		boolean normal = false;
 		
+		
+		//ponizej jakies nulle sa
 		if(request.getParameter("typ").toLowerCase().contains("Vegetarian".toLowerCase()))vege = true;
 		if(request.getParameter("typ").toLowerCase().contains("Normal".toLowerCase()))normal = true;
 
