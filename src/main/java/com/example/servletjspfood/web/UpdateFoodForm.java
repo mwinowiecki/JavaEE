@@ -39,12 +39,26 @@ public class UpdateFoodForm extends HttpServlet {
 		
 		int ID = Integer.parseInt(request.getParameter("foodId"));
 		
+		boolean vege = false;
+		boolean normal = false;
+		
+		if(request.getParameter("typ").toLowerCase().contains("Vegetarian".toLowerCase()))vege = true;
+		if(request.getParameter("typ").toLowerCase().contains("Normal".toLowerCase()))normal = true;
+		
 		String body = "<html><body>";
 		
 		body+=""
-				+"<form action=\"servletjspdemo/updateFood\"; method=\"get\">"
-				+"Nazwa: <input type =\"text\" name=\"name\" value=\"" + name + "\" />"
-				+"Typ: <input type =\"text\" name=\"typ\" value=\"" + typ + "\" />"
+				+"<form action=\"/servletjspdemo/updateFood\"; method=\"get\">"
+				+"Nazwa: <input type =\"text\" name=\"name\" value=\"" + name + "\" />";
+				
+		if(vege) body+= "Typ: <input type=\"radio\" name=\"typ\" value=\"Vegetarian\" checked>Vegetarian";
+		else body+="Typ: <input type=\"radio\" name=\"typ\" value=\"Vegetarian\">Vegetarian";
+		if(normal) body+= "Typ: <input type=\"radio\" name=\"typ\" value=\"Normal\" checked>Normal";
+		else body+="Typ: <input type=\"radio\" name=\"typ\" value=\"Normal\">Normal";
+		
+		
+		
+			body+="Typ: <input type =\"text\" name=\"typ\" value=\"" + typ + "\" />"
 				+"Cena: <input type =\"float\" name=\"cena\" value=\"" + cena + "\" />"
 				+"<input type=\"hidden\" name=\"id\" value=\"" + ID + "\" />"
 				+"</br></br> <input type=\"submit\" value=\"Update\" />"

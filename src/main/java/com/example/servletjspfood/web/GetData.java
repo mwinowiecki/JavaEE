@@ -43,7 +43,7 @@ public class GetData extends HttpServlet{
 	Float cena = null;
 	cena = Float.parseFloat(request.getParameter("cena"));
 	
-	String body = "<html><body>Jedzenie: "
+	String body = "<html><body>Added food: "
 			+"<form action=\"/servletjspdemo/showAll.jsp\">";
 			
 	Food newFood = new Food();
@@ -56,7 +56,10 @@ public class GetData extends HttpServlet{
 	ss.add(newFood);
 	Food.lastID++;
 	
-	body += "<br/> <input type=\"submit\" value=\"Wroc\" />"
+	body += "<br/>Nazwa ...... " + newFood.getName()
+			+"<br/>Typ ....... " + newFood.getTyp()
+			+"<br/>Cena ...... " + newFood.getCena() + "<br/>"
+			+"<br/> <input type=\"submit\" value=\"Wroc\" />"
 			+"<br/></body></html>";
 	
 	writer.println(body);

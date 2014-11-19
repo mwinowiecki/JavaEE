@@ -36,7 +36,7 @@ public class UpdateFood extends HttpServlet{
 		
 		String name = null;
 		name = request.getParameter("name");
-		
+	
 		String typ = null;
 		typ = request.getParameter("typ");
 		
