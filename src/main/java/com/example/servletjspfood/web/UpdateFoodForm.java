@@ -44,11 +44,10 @@ public class UpdateFoodForm extends HttpServlet {
 		
 		if(request.getParameter("typ").toLowerCase().contains("Vegetarian".toLowerCase()))vege = true;
 		if(request.getParameter("typ").toLowerCase().contains("Normal".toLowerCase()))normal = true;
-		
+
 		String body = "<html><body>";
 		
-		body+=""
-				+"<form action=\"/servletjspdemo/updateFood\"; method=\"get\">"
+		body+="<form action=\"/servletjspdemo/updateFood\"; method=\"get\">"
 				+"Nazwa: <input type =\"text\" name=\"name\" value=\"" + name + "\" />";
 				
 		if(vege) body+= "Typ: <input type=\"radio\" name=\"typ\" value=\"Vegetarian\" checked>Vegetarian";
@@ -56,10 +55,23 @@ public class UpdateFoodForm extends HttpServlet {
 		if(normal) body+= "Typ: <input type=\"radio\" name=\"typ\" value=\"Normal\" checked>Normal";
 		else body+="Typ: <input type=\"radio\" name=\"typ\" value=\"Normal\">Normal";
 		
+		boolean salata = false;
+		boolean ser = false;
+		boolean szynka = false;
+		
+		if(request.getParameter("sklad").toLowerCase().contains("Salata".toLowerCase())) salata = true;
+		if(request.getParameter("sklad").toLowerCase().contains("Ser".toLowerCase())) ser = true;
+		if(request.getParameter("sklad").toLowerCase().contains("Szynka".toLowerCase())) szynka = true;
+		
+		if(salata)body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Salata\" checked>Salata<br/>";
+		else body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Salata\">Salata<br/>";
+		if(ser)body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Ser\" checked>Ser<br/>";
+		else body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Ser\">Ser<br/>";
+		if(szynka)body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Szynka\" checked>Szynka<br/>";
+		else body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Szynka\">Szynka<br/>";
 		
 		
-			body+="Typ: <input type =\"text\" name=\"typ\" value=\"" + typ + "\" />"
-				+"Cena: <input type =\"float\" name=\"cena\" value=\"" + cena + "\" />"
+			body+="Cena: <input type =\"float\" name=\"cena\" value=\"" + cena + "\" />"
 				+"<input type=\"hidden\" name=\"id\" value=\"" + ID + "\" />"
 				+"</br></br> <input type=\"submit\" value=\"Update\" />"
 				+"</br></br></body></html>";

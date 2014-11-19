@@ -5,6 +5,7 @@ public class Food {
 	private String nazwa2=" ";
 	private String name=" ";	
 	private String typ = " ";
+	private String sklad = " ";
 	private float cena =0;
 	public static int lastID=0;
 	
@@ -12,12 +13,13 @@ public class Food {
 		super();
 	}
 	
-	public Food(int id, String nazwa2, String name, String typ, float cena){
+	public Food(int id, String nazwa2, String name, String typ, String sklad, float cena){
 		super();
 		this.id = id;
 		this.nazwa2 = nazwa2;
 		this.name = name;		
 		this.typ = typ;
+		this.sklad = sklad;
 		this.cena=cena;
 	}
 	
@@ -35,6 +37,14 @@ public class Food {
 	
 	public void setTyp(String typ){
 		this.typ=typ;
+	}
+	
+	public String getSklad(){
+		return sklad;
+	}
+	
+	public void setSklad(String sklad){
+		this.sklad=sklad;
 	}
 	
 	public int getId(){

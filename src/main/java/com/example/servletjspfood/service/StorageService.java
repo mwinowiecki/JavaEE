@@ -10,7 +10,7 @@ public class StorageService {
 	private List<Food> db = new ArrayList<Food>();
 	
 	public void add(Food food){
-		Food newFood = new Food(food.getId(), food.getName(), food.getName(), food.getTyp(), food.getCena());
+		Food newFood = new Food(food.getId(), food.getName(), food.getName(), food.getTyp(), food.getSklad(), food.getCena());
 		
 		db.add(newFood);
 	}

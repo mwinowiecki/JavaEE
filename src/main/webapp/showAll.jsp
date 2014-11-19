@@ -31,12 +31,17 @@
 	</td>
 	<td>
 	<%
+	out.println("<p>Sklad ...... " + food.getSklad() + "</p>");
+	%>
+	</td>
+	<td>
+	<%
 	out.println("<p>Cena ....... " + food.getCena() + "</p>");
 	%>
 	</td>
 	<%
 	out.println("<td><a href=\"deleteFood?foodId="+String.valueOf(food.getId())+"\">Delete</a></td>");
-	out.println("<td><a href=\"updateFoodForm?foodId="+String.valueOf(food.getId())+"&name="+String.valueOf(food.getName())+"&Typ="+String.valueOf(food.getTyp())+"&Cena="+Float.valueOf(food.getCena())+"\">Update</a></td></tr>");
+	out.println("<td><a href=\"updateFoodForm?foodId="+String.valueOf(food.getId())+"&name="+String.valueOf(food.getName())+"&Typ="+String.valueOf(food.getTyp())+"&sklad="+String.valueOf(food.getSklad())+"&Cena="+Float.valueOf(food.getCena())+"\">Update</a></td></tr>");
 	
 }
 

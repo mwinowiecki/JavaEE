@@ -37,8 +37,24 @@ public class UpdateFood extends HttpServlet{
 		String name = null;
 		name = request.getParameter("name");
 	
-		String typ = null;
-		typ = request.getParameter("typ");
+		String selectedTyp = "";
+		if(request.getParameter("typ")!=null){
+			for(String typ : request.getParameterValues("typ")){
+				selectedTyp += typ +" ";
+			}
+		}
+		else if(request.getParameter("typ")==null)
+			selectedTyp="";
+		
+		String selectedSklad = "";
+		if(request.getParameter("sklad")!= null){
+			for(String sklad : request.getParameterValues("sklad")){
+				selectedSklad+= sklad + " ";
+			}
+		
+		}
+		else if(request.getParameter("sklad")==null)
+			selectedSklad = "";
 		
 		Float cena = null;
 		if(request.getParameter("cena") != null){
@@ -52,7 +68,8 @@ public class UpdateFood extends HttpServlet{
 		Food newFood = new Food();
 		
 		newFood.setName(name);
-		newFood.setTyp(typ);
+		newFood.setTyp(selectedTyp);
+		newFood.setSklad(selectedSklad);
 		newFood.setCena(cena);
 		newFood.setId(ID);
 		

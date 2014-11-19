@@ -19,6 +19,10 @@
 	Typ: <input type="radio" name="typ" value="Vegetarian"/>Vegetarian
 		<input type="radio" name="typ" value="Normal"/>Normal<br/><br/>
 	
+	Sklad: <br><input type="checkbox" name="sklad" value="Salata">Salata<br/>
+	<input type="checkbox" name="sklad" value="Ser"/>Ser<br>
+	<input type="checkbox" name="sklad" value="Szynka">Szynka<br/><br/>
+	
 	Cena: <input type="float" name="cena" value="${food.cena }"/><br/>
 	
 	<input type="submit" value=" OK ">

@@ -40,6 +40,9 @@ public class DeleteFood  extends HttpServlet {
 		String typ = null;
 		typ = request.getParameter("typ");
 		
+		String sklad = null;
+		sklad = request.getParameter("sklad");
+		
 		float cena = 0;
 		if(request.getParameter("cena") != null){
 			cena=Float.parseFloat(request.getParameter("cena"));

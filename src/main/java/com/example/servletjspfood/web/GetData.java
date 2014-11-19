@@ -37,8 +37,23 @@ public class GetData extends HttpServlet{
 	String name = null;
 	name = request.getParameter("name");
 	
-	String typ = null;
-	typ = request.getParameter("typ");
+	String selectedTyp = "";
+	if(request.getParameter("typ") != null){
+		for(String typ : request.getParameterValues("typ")){
+			selectedTyp+=typ;
+		}
+	}
+	else if(request.getParameter("typ") == null)
+		selectedTyp="";
+	
+	String selectedSklad = "";
+	if(request.getParameter("sklad")!=null){
+		for(String sklad : request.getParameterValues("sklad")){
+			selectedSklad+=sklad + " ";
+		}
+	}
+	else if(request.getParameter("sklad") == null)
+		selectedSklad="";
 	
 	Float cena = null;
 	cena = Float.parseFloat(request.getParameter("cena"));
@@ -49,7 +64,8 @@ public class GetData extends HttpServlet{
 	Food newFood = new Food();
 	
 	newFood.setName(name);
-	newFood.setTyp(typ);
+	newFood.setTyp(selectedTyp);
+	newFood.setSklad(selectedSklad);
 	newFood.setCena(cena);
 	newFood.setId(Food.lastID);
 	
@@ -58,6 +74,7 @@ public class GetData extends HttpServlet{
 	
 	body += "<br/>Nazwa ...... " + newFood.getName()
 			+"<br/>Typ ....... " + newFood.getTyp()
+			+"<br/>Sklad ..... " + newFood.getSklad()
 			+"<br/>Cena ...... " + newFood.getCena() + "<br/>"
 			+"<br/> <input type=\"submit\" value=\"Wroc\" />"
 			+"<br/></body></html>";
