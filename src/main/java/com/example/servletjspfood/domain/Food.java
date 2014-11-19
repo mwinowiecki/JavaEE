@@ -2,10 +2,10 @@ package com.example.servletjspfood.domain;
 
 public class Food {
 	public int id =0;
-	private String nazwa2=" ";
-	private String name=" ";	
-	private String typ = " ";
-	private String sklad = " ";
+	private String nazwa2="";
+	private String name="empty";	
+	private String typ = "";
+	private String sklad = "";
 	private float cena =0;
 	public static int lastID=0;
 	

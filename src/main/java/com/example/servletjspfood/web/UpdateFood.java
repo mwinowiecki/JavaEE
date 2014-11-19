@@ -34,8 +34,7 @@ public class UpdateFood extends HttpServlet{
 		
 		Food food = (Food)request.getSession().getAttribute("food");
 		
-		String name = null;
-		name = request.getParameter("name");
+		String name = request.getParameter("name");		
 	
 		String selectedTyp = "";
 		if(request.getParameter("typ")!=null){
@@ -44,7 +43,7 @@ public class UpdateFood extends HttpServlet{
 			}
 		}
 		else if(request.getParameter("typ")==null)
-			selectedTyp="";
+			selectedTyp="empty";
 		
 		String selectedSklad = "";
 		if(request.getParameter("sklad")!= null){
@@ -54,7 +53,7 @@ public class UpdateFood extends HttpServlet{
 		
 		}
 		else if(request.getParameter("sklad")==null)
-			selectedSklad = "";
+			selectedSklad = "empty";
 		
 		Float cena = null;
 		if(request.getParameter("cena") != null){

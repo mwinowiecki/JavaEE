@@ -44,7 +44,7 @@ public class GetData extends HttpServlet{
 		}
 	}
 	else if(request.getParameter("typ") == null)
-		selectedTyp="";
+		selectedTyp="empty";
 	
 	String selectedSklad = "";
 	if(request.getParameter("sklad")!=null){
@@ -53,7 +53,7 @@ public class GetData extends HttpServlet{
 		}
 	}
 	else if(request.getParameter("sklad") == null)
-		selectedSklad="";
+		selectedSklad="empty";
 	
 	Float cena = null;
 	cena = Float.parseFloat(request.getParameter("cena"));
