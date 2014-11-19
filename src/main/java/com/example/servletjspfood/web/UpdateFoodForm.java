@@ -32,7 +32,7 @@ public class UpdateFoodForm extends HttpServlet {
 		String typ = null;
 		typ = request.getParameter("typ");
 		
-		Float cena = null;
+		float cena = 0;
 		if(request.getParameter("cena") != null){
 			cena = Float.parseFloat(request.getParameter("cena"));
 		}
@@ -43,19 +43,22 @@ public class UpdateFoodForm extends HttpServlet {
 		boolean normal = false;
 		
 		
-		//ponizej jakies nulle sa
 		if(request.getParameter("typ").toLowerCase().contains("Vegetarian".toLowerCase()))vege = true;
 		if(request.getParameter("typ").toLowerCase().contains("Normal".toLowerCase()))normal = true;
 
 		String body = "<html><body>";
 		
 		body+="<form action=\"/servletjspdemo/updateFood\"; method=\"get\">"
-				+"Nazwa: <input type =\"text\" name=\"name\" value=\"" + name + "\" />";
+				+"Nazwa: <input type =\"text\" name=\"name\" value=\"" + name + "\" /><br/>";
 				
-		if(vege) body+= "Typ: <input type=\"radio\" name=\"typ\" value=\"Vegetarian\" checked>Vegetarian";
-		else body+="Typ: <input type=\"radio\" name=\"typ\" value=\"Vegetarian\">Vegetarian";
-		if(normal) body+= "Typ: <input type=\"radio\" name=\"typ\" value=\"Normal\" checked>Normal";
-		else body+="Typ: <input type=\"radio\" name=\"typ\" value=\"Normal\">Normal";
+		
+		body+="Typ: ";
+		if(vege) body+="<input type=\"radio\" name=\"typ\" value=\"Vegetarian\" checked>Vegetarian";
+		else body+="<input type=\"radio\" name=\"typ\" value=\"Vegetarian\">Vegetarian";
+		if(normal) body+= "<input type=\"radio\" name=\"typ\" value=\"Normal\" checked>Normal";
+		else body+="<input type=\"radio\" name=\"typ\" value=\"Normal\">Normal";
+		
+		body+="<br/>";
 		
 		boolean salata = false;
 		boolean ser = false;
@@ -65,12 +68,13 @@ public class UpdateFoodForm extends HttpServlet {
 		if(request.getParameter("sklad").toLowerCase().contains("Ser".toLowerCase())) ser = true;
 		if(request.getParameter("sklad").toLowerCase().contains("Szynka".toLowerCase())) szynka = true;
 		
-		if(salata)body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Salata\" checked>Salata<br/>";
-		else body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Salata\">Salata<br/>";
-		if(ser)body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Ser\" checked>Ser<br/>";
-		else body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Ser\">Ser<br/>";
-		if(szynka)body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Szynka\" checked>Szynka<br/>";
-		else body +="Sklad: <br><input type=\"checkbox\" name=\"sklad\" value=\"Szynka\">Szynka<br/>";
+		body+="Sklad: <br/>";
+		if(salata)body +="<input type=\"checkbox\" name=\"sklad\" value=\"Salata\" checked>Salata<br/>";
+		else body +="<input type=\"checkbox\" name=\"sklad\" value=\"Salata\">Salata<br/>";
+		if(ser)body +="<input type=\"checkbox\" name=\"sklad\" value=\"Ser\" checked>Ser<br/>";
+		else body +="<input type=\"checkbox\" name=\"sklad\" value=\"Ser\">Ser<br/>";
+		if(szynka)body +="<input type=\"checkbox\" name=\"sklad\" value=\"Szynka\" checked>Szynka<br/>";
+		else body +="<input type=\"checkbox\" name=\"sklad\" value=\"Szynka\">Szynka<br/>";
 		
 		
 			body+="Cena: <input type =\"float\" name=\"cena\" value=\"" + cena + "\" />"

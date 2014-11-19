@@ -51,10 +51,11 @@ public class DeleteFood  extends HttpServlet {
 		int ID = Integer.parseInt(request.getParameter("foodId"));
 		
 				
-		String body = "<html><body> Food with id " + ID + "removed";
+		String body = "<html><body> Food with id " + ID + " removed";
 		ss.delete(ID);
 		
-		body+="<br/><br/> <input type=\"submit\" value=\"Wroc\" /> "
+		body+="<form action=\"/servletjspdemo/index.jsp\""
+				+"<br/><br/> <input type=\"submit\" value=\"Wroc\" /> "
 				+"<br/><br/></body></html>";
 		
 		writer.println(body);

@@ -76,7 +76,7 @@ public class UpdateFood extends HttpServlet{
 		ss.update(newFood, ID);
 		
 		
-		body+="<form action=\"/servletjspdemo/showAll.jsp\"; method=\"get\">"
+		body+="<form action=\"/servletjspdemo/showAll.jsp\"; method=\"get\">Updated"
 				+"<br/><br/> <input type=\"submit\" value=\"Wroc\">"
 				+"<br/><br/></body></html>";
 		
