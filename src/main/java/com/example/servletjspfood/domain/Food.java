@@ -1,5 +1,7 @@
 package com.example.servletjspfood.domain;
 
+import java.util.Date;
+
 public class Food {
 	public int id =0;
 	private String nazwa2="";
@@ -7,6 +9,7 @@ public class Food {
 	private String typ = "";
 	private String sklad = "";
 	private float cena =0;
+	private Date dom = new Date(); //date of make
 	public static int lastID=0;
 	
 	public Food(){
